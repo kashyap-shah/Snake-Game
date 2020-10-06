@@ -51,6 +51,15 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box
 }
 
+// Check if the snake's location is equal to the food's location
+if(food.x === snake[0].x && food.y === snake[0].y) {
+    console.log('TRIGGERED');
+    // If they are randomly the same we can hard code a new x or y value 
+    // to either food or snake. I choose food's x coordinate here.
+    if(food.x > 100) food.x = 50; //If it's over 100 we hardcode a number under 100
+    else food.x = 150; //If it's under 100 we hardcode a number over 100
+}
+
 // create the score var
 
 let score =0;
